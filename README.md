@@ -1,0 +1,33 @@
+# Gitea Comment
+
+A Drone plugin to post comments on a Gitea Pull Request
+
+Example reference for pull request
+
+```yml
+steps:
+- name: post-to-gitea-pr
+  image: tsakidev/giteacomment:latest
+  settings:
+    gitea_token:
+      from_secret: gitea_token
+    gitea_base_url: http://gitea.example.com
+    comment: "Hello from Drone"
+  when:
+    status: [ failure ]
+    event: pull_request
+```
+
+```yml
+steps:
+- name: post-to-gitea-pr
+  image: tsakidev/giteacomment:latest
+  settings:
+    gitea_token:
+      from_secret: gitea_token
+    gitea_base_url: http://gitea.example.com
+    comment_from_file: "/path/to/file.txt"
+  when:
+    status: [ failure ]
+    event: pull_request
+```
