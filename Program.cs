@@ -20,6 +20,7 @@ namespace IT.GiteaComment
             string DRONE_REPO_NAMESPACE = Environment.GetEnvironmentVariable("DRONE_REPO_NAMESPACE");
             string DRONE_REPO_NAME = Environment.GetEnvironmentVariable("DRONE_REPO_NAME");
             string DRONE_PULL_REQUEST = Environment.GetEnvironmentVariable("DRONE_PULL_REQUEST");
+            string COMMENT_TITLE = Environment.GetEnvironmentVariable("PLUGIN_COMMENT_TITLE");
             string TEXT_COMMENT = Environment.GetEnvironmentVariable("PLUGIN_COMMENT");
             string COMMENT_FROM_FILE = Environment.GetEnvironmentVariable("PLUGIN_COMMENT_FROM_FILE");
 
@@ -44,8 +45,10 @@ namespace IT.GiteaComment
             string comment = string.Empty;
             if (!string.IsNullOrEmpty(COMMENT_FROM_FILE) && !string.IsNullOrWhiteSpace(COMMENT_FROM_FILE))
             {
+                string title = COMMENT_TITLE.ToString().Trim()
+                title = string.IsNullOrEmpty(COMMENT_TITLE.ToString().Trim()) ? title : "Gitea Comment";
                 Console.WriteLine("Reading from file");
-                comment = "## Coverage Report\\n```text\\n"+System.IO.File.ReadAllText(COMMENT_FROM_FILE.ToString()).Trim().Replace(Environment.NewLine, "\\n")+"\\n```";
+                comment = $"## {title}\\n```text\\n"+System.IO.File.ReadAllText(COMMENT_FROM_FILE.ToString()).Trim().Replace(Environment.NewLine, "\\n")+"\\n```";
             }
             else
             {
