@@ -46,7 +46,7 @@ namespace IT.GiteaComment
             if (!string.IsNullOrEmpty(COMMENT_FROM_FILE) && !string.IsNullOrWhiteSpace(COMMENT_FROM_FILE))
             {
                 string title = COMMENT_TITLE.ToString().Trim();
-                title = string.IsNullOrEmpty(title) ? title : "Gitea Comment";
+                title = !string.IsNullOrEmpty(title) ? title : "Gitea Comment";
                 Console.WriteLine("Reading from file");
                 comment = $"## {title}\\n```text\\n"+System.IO.File.ReadAllText(COMMENT_FROM_FILE.ToString()).Trim().Replace(Environment.NewLine, "\\n")+"\\n```";
             }
@@ -57,8 +57,6 @@ namespace IT.GiteaComment
             }
 
             string postBody = $"{{\"Body\":\"{comment}\"}}";
-
-            Console.WriteLine(postBody);
 
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(GITEA_BASE_URL.ToString().Trim());
