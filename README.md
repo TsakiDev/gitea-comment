@@ -2,6 +2,8 @@
 
 A Drone plugin to post comments on a Gitea Pull Request
 
+Docker Hub: https://hub.docker.com/r/tsakidev/giteacomment
+
 Example reference for pull request with static string:
 
 ```yml
