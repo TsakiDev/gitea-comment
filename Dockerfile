@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/core/runtime:3.1.8-buster-slim
-RUN mkdir /bin/app
-COPY bin/Release/netcoreapp3.1/publish/ /bin/app/
+ADD bin/Release/netcoreapp3.1/publish/* /bin/
+# COPY bin/Release/netcoreapp3.1/publish/ /bin/app/
 # WORKDIR /app
-RUN chmod +x /bin/app/IT.GiteaComment
-ENTRYPOINT ["ls /bin/app"]
+RUN chmod +x /bin/IT.GiteaComment
+CMD "/bin/IT.GiteaComment"
