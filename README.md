@@ -28,6 +28,7 @@ steps:
     gitea_token:
       from_secret: gitea_token
     gitea_base_url: http://gitea.example.com
+    comment_title: "My Title"
     comment_from_file: "/path/to/file.txt"
   when:
     status: [ failure ]
