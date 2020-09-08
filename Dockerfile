@@ -1,6 +1,5 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+FROM mcr.microsoft.com/dotnet/core/runtime:3.1.8-buster-slim
 COPY bin/Release/netcoreapp3.1/publish/ app/
 WORKDIR /app
-RUN ls 
 RUN chmod +x ./IT.GiteaComment
-ENTRYPOINT ["./IT.GiteaComment"]
+ENTRYPOINT ["ls", "/app/IT.GiteaComment"]
