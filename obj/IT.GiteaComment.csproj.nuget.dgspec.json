@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/tsaki/projects/app/IT.GiteaComment.csproj": {}
+  },
+  "projects": {
+    "/home/tsaki/projects/app/IT.GiteaComment.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/tsaki/projects/app/IT.GiteaComment.csproj",
+        "projectName": "IT.GiteaComment",
+        "projectPath": "/home/tsaki/projects/app/IT.GiteaComment.csproj",
+        "packagesPath": "/home/tsaki/.nuget/packages/",
+        "outputPath": "/home/tsaki/projects/app/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tsaki/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.Extensions.Configuration.EnvironmentVariables": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
