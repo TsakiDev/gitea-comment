@@ -2,7 +2,7 @@
 
 A Drone plugin to post comments on a Gitea Pull Request
 
-Example reference for pull request
+Example reference for pull request with static string:
 
 ```yml
 steps:
@@ -17,6 +17,8 @@ steps:
     status: [ failure ]
     event: pull_request
 ```
+
+Example reference for pull request with input from file:
 
 ```yml
 steps:
